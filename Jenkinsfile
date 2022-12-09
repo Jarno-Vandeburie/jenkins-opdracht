@@ -14,6 +14,7 @@ pipeline {
 
     stage('Install docker'){
         steps {
+            sh 'docker exec -it --workdir /root --user root 0766 bash'
             sh 'apt update -y'
             sh 'apt install -y apt-transport-https ca-certificates curl software-properties-common'
             sh 'curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -'
