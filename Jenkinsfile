@@ -16,7 +16,6 @@ pipeline {
         steps {
             echo '---------- start build docker ----------'
         
-            sh 'cat /os-release'
             sh 'docker build -t jarnovandeburie/opdracht-jenkins .'
 
             echo '---------- stop build docker ----------'
