@@ -2,24 +2,24 @@ pipeline {
   agent any
 
   stages {
-    stage('Checkout git') {
-      steps {
-        echo '---------- start checkout ----------'
+    stage('Checkout') {
+        steps {
+            echo '---------- start checkout ----------'
         
-        git 'https://github.com/Jarno-Vandeburie/jenkins-opdracht.git'
+            git url: 'https://github.com/Jarno-Vandeburie/jenkins-opdracht.git', branch: 'main'
 
-        echo '---------- stop checkout ----------'
-      }
+            echo '---------- stop build docker ----------'
+        }
     }
 
     stage('Build Docker Container') {
-            steps {
-                echo '---------- start checkout ----------'
+        steps {
+            echo '---------- start build docker ----------'
         
-                sh 'docker build -t opdracht-jenkins .'
+            sh 'docker build -t opdracht-jenkins .'
 
-                echo '---------- stop checkout ----------'
-            }
+            echo '---------- stop build docker ----------'
         }
+    }
   }
 }
