@@ -8,7 +8,7 @@ pipeline {
         
             git url: 'https://github.com/Jarno-Vandeburie/jenkins-opdracht.git', branch: 'main'
 
-            echo '---------- stop build docker ----------'
+            echo '---------- stop checkout ----------'
         }
     }
 
@@ -16,9 +16,19 @@ pipeline {
         steps {
             echo '---------- start build docker ----------'
         
-            sh 'docker build -t opdracht-jenkins .'
+            sh 'docker build -t jarnovandeburie/opdracht-jenkins .'
 
             echo '---------- stop build docker ----------'
+        }
+    }
+
+    stage('Pust to dockerhub') {
+        steps {
+            echo '---------- start push docker ----------'
+
+            sh 'docker push jarnovandeburie/opdracht-jenkins'
+
+            echo '---------- stop push docker ----------'
         }
     }
   }
