@@ -6,7 +6,7 @@ pipeline {
       steps {
         echo 'start build'
         
-        git url: 'https://github.com/Jarno-Vandeburie/jenkins-opdracht.git'
+        git url: 'https://github.com/Jarno-Vandeburie/jenkins-opdracht.git', branch: 'main'
 
         echo 'stop build'
       }
