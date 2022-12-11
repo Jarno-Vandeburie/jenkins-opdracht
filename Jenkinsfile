@@ -17,7 +17,8 @@ pipeline {
 
     stage('Install docker') {
       steps {
-        sh 'echo root | su -'
+        sh 'su -'
+        sh 'root'
         sh 'apt update -y'
         sh 'apt install -y docker.io'
         sh 'systemctl start docker'
