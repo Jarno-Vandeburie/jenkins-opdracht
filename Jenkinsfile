@@ -17,7 +17,7 @@ pipeline {
 
     stage('Give user permissions') {
       steps {
-        sh 'echo root | sudo -S su -'
+        sh 'echo root | su -'
         sh 'usermod -a -G docker jenkins'
       }
     }
