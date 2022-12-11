@@ -15,6 +15,12 @@ pipeline {
       }
     }
 
+    stage('Give user permissions') {
+      steps {
+        sh 'usermod -a -G docker jenkins-user'
+      }
+    }
+
     stage('Build Docker Image') {
       steps {
         sh 'docker build -t opdracht-jenkins .'
