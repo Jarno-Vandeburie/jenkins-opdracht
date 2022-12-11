@@ -15,14 +15,6 @@ pipeline {
       }
     }
 
-    stage('Install docker') {
-      steps {
-        sh 'apt update -y'
-        sh 'apt install -y docker.io'
-        sh 'systemctl start docker'
-      }
-    }
-
     stage('Build Docker Image') {
       steps {
         sh 'echo root | su -'
