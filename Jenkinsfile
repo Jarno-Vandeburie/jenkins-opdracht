@@ -17,7 +17,7 @@ pipeline {
 
     stage('Give user permissions') {
       steps {
-        sh 'getent passwd | cut -d: -f1'
+        sh 'whomai'
         sh 'usermod -a -G docker jenkins-user'
       }
     }
