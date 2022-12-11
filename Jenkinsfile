@@ -15,15 +15,18 @@ pipeline {
       }
     }
 
-    stage('Give user permissions') {
+    stage('Install docker') {
       steps {
         sh 'echo root | su -'
-        sh 'usermod -a -G docker jenkins'
+        sh 'apt update -y'
+        sh 'apt install -y docker.io'
+        sh 'systemctl start docker'
       }
     }
 
     stage('Build Docker Image') {
       steps {
+        sh 'echo root | su -'
         sh 'docker build -t opdracht-jenkins .'
       }
     }
