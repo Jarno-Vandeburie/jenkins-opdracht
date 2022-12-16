@@ -23,8 +23,10 @@ pipeline {
 
     stage('Push to Docker Hub') {
       steps {
-        sh 'docker login -u jarnovandeburie -p r0950712-docker docker.io'
-        sh 'docker push opdracht-jenkins'
+        withDockerRegistry([credentialsId: 'my-docker-hub-credentials']) {
+          sh
+            'docker push my-image:latest'
+        }
       }
     }
   }
