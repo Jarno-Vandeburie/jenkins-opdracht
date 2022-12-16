@@ -23,7 +23,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh 'docker run -p 8080:8080 -p 50000:50000 opdracht-jenkins'
+        sh 'docker run -p 8080:8080 -p 50001:50001 opdracht-jenkins'
       }
     }
 
