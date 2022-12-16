@@ -23,7 +23,7 @@ pipeline {
 
     stage('Push to Docker Hub') {
       steps {
-        withDockerRegistry([credentialsId: 'my-docker-hub-credentials']) {
+        withDockerRegistry([credentialsId: 'efa347b3-1cbb-4a40-a33e-4704ce7c5f2a']) {
           sh
             'docker push opdracht-jenkins:latest'
         }
