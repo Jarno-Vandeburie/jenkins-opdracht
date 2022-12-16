@@ -1,6 +1,5 @@
 FROM node:latest
 
-RUN npm install -y
 RUN npm install -y express
 
 COPY ./api /app/src
