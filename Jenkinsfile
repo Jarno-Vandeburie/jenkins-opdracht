@@ -25,7 +25,7 @@ pipeline {
       steps {
         withDockerRegistry([credentialsId: 'my-docker-hub-credentials']) {
           sh
-            'docker push my-image:latest'
+            'docker push opdracht-jenkins:latest'
         }
       }
     }
