@@ -17,7 +17,6 @@ pipeline {
 
     stage('Build Docker Image') {
       steps {
-        sh 'echo root | su -'
         sh 'docker build -t opdracht-jenkins .'
       }
     }
