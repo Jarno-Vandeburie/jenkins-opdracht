@@ -21,12 +21,6 @@ pipeline {
       }
     }
 
-    stage('Deploy') {
-      steps {
-        sh 'docker run -p 8080:8080 -p 50001:50001 opdracht-jenkins'
-      }
-    }
-
     stage('Push to Docker Hub') {
       steps {
         sh 'docker login -u your-username -p your-password'
