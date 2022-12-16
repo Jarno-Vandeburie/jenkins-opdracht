@@ -24,7 +24,7 @@ pipeline {
     stage('Push to Docker Hub') {
       steps {
         sh 'docker login -u jarnovandeburie -p r0950712-docker docker.io'
-        sh 'docker push opdracht-jenkins'
+        sh 'docker push jarnovandeburie/opdracht-jenkins'
       }
     }
   }
