@@ -16,4 +16,4 @@ COPY ./api .
 EXPOSE 8090
 
 # Run the application
-CMD ["npm", "run"]
+CMD ["node", "app.js"]
