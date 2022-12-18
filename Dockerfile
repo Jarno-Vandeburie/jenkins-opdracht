@@ -8,6 +8,6 @@ RUN npm install -y express
 
 COPY ./api .
 
-EXPOSE 8090
+EXPOSE 3000
 
 CMD ["node", "app.js"]
