@@ -13,7 +13,7 @@ COPY package*.json ./
 COPY ./api .
 
 # Expose the application's port
-EXPOSE 8080
+EXPOSE 8090
 
 # Run the application
 CMD ["npm", "start"]
