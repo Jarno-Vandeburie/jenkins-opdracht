@@ -23,9 +23,8 @@ pipeline {
 
     stage('Push image') {
       steps {
-        withDockerRegistry([ credentialsId: "efa347b3-1cbb-4a40-a33e-4704ce7c5f2a", url: "" ]) {
-          sh "docker push jarnovandeburie/opdracht-jenkins:build"
-        }
+        sh 'docker login -u jarnovandeburie -p r0950712-docker'
+        sh 'docker push jarnovandeburie/opdracht-jenkins'
       }
     }
   }
