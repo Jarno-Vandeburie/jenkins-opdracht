@@ -101,3 +101,14 @@ pipeline {
   }
 }
 ```
+
+# Footnote
+Als er een docker container aangemaakt wordt, dan is de api niet beschikbaar via https://localhost:3000.
+`docker exec XYZ curl http://localhost:3000` zal wel volgend resultaat geven:
+```
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    47  100    47    0     0   1119      0 --:--:-- --:--:-- --:--:--  1146
+{"message":"Hello from Jarno's node.js API :)"}
+```  
+
