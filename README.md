@@ -35,3 +35,5 @@ Dit voert het "cat" commando uit op de docker
 Installeer de voorgestelde plugins
 
 Maak een *multiline pipline* job aan en selecteer *git* bij de branch sources
+
+Om 
