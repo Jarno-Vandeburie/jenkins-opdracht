@@ -23,10 +23,9 @@ pipeline {
 
     stage('Push to Docker Hub') {
       steps {
-        withDockerRegistry([credentialsId: 'efa347b3-1cbb-4a40-a33e-4704ce7c5f2a', url: 'https://index.docker.io/v1/']) {
-          sh '''
-                        docker push opdracht-jenkins:latest
-                    '''
+        withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'r0950712-docker', usernameVariable: 'jarnovandeburie')]) {
+          sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
+          sh 'docker push opdracht-jenkins'
         }
       }
     }
