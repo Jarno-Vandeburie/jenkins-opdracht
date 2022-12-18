@@ -21,10 +21,13 @@ pipeline {
       }
     }
 
-    stage('Push to Docker Hub') {
-      steps {
-        sh 'docker login -u jarnovandeburie -p r0950712-docker'
-        sh 'docker push opdracht-jenkins'
+    stage('Push image') {
+      withCredentials([usernamePassword( credentialsId: 'docker-hub-credentials', usernameVariable: 'jarnovandeburie', passwordVariable: 'r0950712-docker')]) {
+        def registry_url = "registry.hub.docker.com/"
+        sh "docker login -u $USER -p $PASSWORD ${registry_url}"
+        docker.withRegistry("http://${registry_url}", "docker-hub-credentials") {
+          sh "docker push jarnovandeburie/opdracht-jenkins:build"
+        }
       }
     }
   }
