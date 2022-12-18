@@ -16,4 +16,4 @@ COPY ./api .
 EXPOSE 8090
 
 # Run the application
-CMD ["ls"]
+CMD ["npm", "run"]
