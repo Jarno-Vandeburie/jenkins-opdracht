@@ -36,4 +36,4 @@ Installeer de voorgestelde plugins
 
 Maak een *multiline pipline* job aan en selecteer *git* bij de branch sources
 
-Om 
+Vink *Periodically if not otherwise run* aan in de *Scan multibrach pipeline triggers* sectie en kies voor *15 minutes*. Dit zal om de 15 minuten de pipeline activeren.
