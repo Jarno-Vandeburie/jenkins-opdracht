@@ -17,7 +17,7 @@ pipeline {
 
     stage('Build Docker Image') {
       steps {
-        sh 'docker build -t opdracht-jenkins .'
+        sh 'docker build -t jarnovandeburie/opdracht-jenkins .'
       }
     }
 
