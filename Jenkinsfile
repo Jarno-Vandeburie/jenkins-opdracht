@@ -22,12 +22,8 @@ pipeline {
     }
 
     stage('Push image') {
-      withCredentials([usernamePassword( credentialsId: 'docker-hub-credentials', usernameVariable: 'jarnovandeburie', passwordVariable: 'r0950712-docker')]) {
-        def registry_url = "registry.hub.docker.com/"
-        sh "docker login -u $USER -p $PASSWORD ${registry_url}"
-        docker.withRegistry("http://${registry_url}", "docker-hub-credentials") {
-          sh "docker push jarnovandeburie/opdracht-jenkins:build"
-        }
+      withDockerRegistry([ credentialsId: "docker-hub-credentials", url: "" ]) {
+        sh "docker push jarnovandeburie/opdracht-jenkins:build"
       }
     }
   }
